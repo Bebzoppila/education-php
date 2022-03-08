@@ -2,7 +2,7 @@
     session_start();
     if(empty($_SESSION)){
         if ( !empty($_COOKIE['login']) and !empty($_COOKIE['key']) ) {
-            echo $_COOKIE['login'];
+            // echo $_COOKIE['login'];
         }
     }
 ?>

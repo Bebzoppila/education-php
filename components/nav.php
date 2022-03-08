@@ -1,10 +1,12 @@
-
+<?php 
+    require_once 'config.php';
+?>
 <nav>
     <ul class="nav-list">
-        <li><a href="/education/products">Продукты</a></li>
-        <li><a href="/education/">Главная</a></li>
-        <li><a href="/education/register">Регистрация</a></li>
-        <li><a href="/education/auth">Авторизация</a></li>
-        <li><a href="/education/cart">Корзина</a></li>
+        <li><a href="<?= $baseUrl ?>/products">Продукты</a></li>
+        <li><a href="<?= $baseUrl ?>/">Главная</a></li>
+        <li><a href="<?= $baseUrl ?>/register">Регистрация</a></li>
+        <li><a href="<?= $baseUrl ?>/auth">Авторизация</a></li>
+        <li><a href="<?= $baseUrl ?>/cart">Корзина</a></li>
     </ul>
 </nav>

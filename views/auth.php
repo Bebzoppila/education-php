@@ -1,6 +1,6 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
-    $formAction = '/education/auth';
+    $formAction = $baseUrl . '/auth';
     $btnText = 'Авторизация';
     if(!empty($_SESSION['auth'])){
         echo 'Вы уже авторизованы';
@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     $myUser = new User();
     $userData = $myUser->auth($_POST['userName'], $_POST['password']);
     if(empty($userData)){
-        header('location: /education/auth');
+        header("location: $baseUrl/auth");
     }
     session_start();
     $_SESSION['auth'] = true;
@@ -24,5 +24,5 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     setcookie('login', $userData['login'], time() + 60* 60 * 24 * 10); //логин
     setcookie('key', $key, time()+ 60 * 60 * 24 * 10); //случайная строка
     $myUser->setNewKey($userData['login'], $key);
-    header('location: /education');
+    header("location: $baseUrl");
 }

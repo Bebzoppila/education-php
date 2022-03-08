@@ -5,8 +5,6 @@
     if(!empty($_SESSION['auth']) and $_SERVER['REQUEST_METHOD'] == 'POST'){
         include_once 'models/user.php';
         $myUser = new User();
-        echo (int)$_POST['productId'];
-        echo (int)$_SESSION['id'];
         $myUser->setNewProduct((int)$_SESSION['id'], (int)$_POST['productId']);
     }
 ?>
@@ -14,7 +12,7 @@
 <div class="wrapper">
 
     <?php foreach ($allProducts as $product): ?>
-        <?php echo $product['id'] ; ?>
+        <?=  $product['id'] ; ?>
         <article class="item">
             <h2><?= $product['name']  ?></h2>
             <img class="item__img" src="<?= $product['img']  ?>" alt="афцвфцв">

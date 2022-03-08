@@ -1,6 +1,6 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
-        $formAction = '/education/register';
+        $formAction = $baseUrl . '/register';
         $btnText = 'Регистрация';
         include_once 'components/form.php';
     }else{
